@@ -84,3 +84,7 @@ chain = RetrievalQA.from_chain_type(llm=llm2,
                                     input_key="question")
 chain.run('What is the WebAsssembly Component Model?')
 ```
+
+Returns
+
+"The WebAssembly Component Model is a broad-reaching architecture for building interoperable Wasm libraries, applications, and environments."

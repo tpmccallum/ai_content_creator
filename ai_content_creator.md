@@ -1,3 +1,4 @@
+```bash
 !pip install langchain
 !pip install huggingface_hub
 !pip install sentence_transformers
@@ -7,7 +8,9 @@
 !pip install Cython
 !pip install tiktoken
 !pip install unstructured[local-inference]
+```
 
+```python
 import os
 import requests
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "your_hugging_face_token"
@@ -80,3 +83,4 @@ chain = RetrievalQA.from_chain_type(llm=llm2,
                                     retriever=index2.vectorstore.as_retriever(),
                                     input_key="question")
 chain.run('What is the WebAsssembly Component Model?')
+```

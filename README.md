@@ -3,8 +3,8 @@
 This is a set of instructions to:
 - harvest many websites,
 - fetch pages from each website,
-- train an Artificial Intelligence (AI) model on those individual web pages, and then
-- answer questions about those websites.
+- use LangChain question answering (powered by the Open Source Llama 2 Model from Facebook AI) on those individual web pages, and then
+- answer questions and provide the source document
 
 # Prerequisites
 

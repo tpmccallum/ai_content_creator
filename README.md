@@ -33,17 +33,14 @@ import os
 import requests
 os.environ["HUGGINGFACEHUB_API_TOKEN"] = "your_hugging_face_token"
 
-from langchain.document_loaders import TextLoader  #for textfiles
-from langchain.text_splitter import CharacterTextSplitter #text splitter
-from langchain.embeddings import HuggingFaceEmbeddings #for using HugginFace models
-# Vectorstore: https://python.langchain.com/en/latest/modules/indexes/vectorstores.html
-from langchain.vectorstores import FAISS  #facebook vectorizationfrom langchain.chains.question_answering import load_qa_chain
+from langchain.text_splitter import CharacterTextSplitter
+from langchain.embeddings import HuggingFaceEmbeddings
+from langchain.vectorstores import FAISS
 from langchain.chains.question_answering import load_qa_chain
 from langchain import HuggingFaceHub
-from langchain.document_loaders import UnstructuredPDFLoader  #load pdf
-from langchain.indexes import VectorstoreIndexCreator #vectorize db index with chromadb
+from langchain.indexes import VectorstoreIndexCreator
 from langchain.chains import RetrievalQA
-from langchain.document_loaders import UnstructuredURLLoader  #load urls into docoument-loader
+from langchain.document_loaders import UnstructuredURLLoader
 
 # Use standard library to fetch contents of URLs
 import requests
@@ -100,7 +97,7 @@ chain = RetrievalQA.from_chain_type(llm=llm2,
                                     chain_type="stuff",
                                     retriever=index2.vectorstore.as_retriever(),
                                     input_key="question")
-chain.run('What is the WebAsssembly Component Model?')
+chain.run('What is the WebAssembly Component Model?')
 ```
 
 Returns
